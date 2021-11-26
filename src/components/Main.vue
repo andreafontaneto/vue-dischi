@@ -11,10 +11,8 @@
         :album="album"/>
       
       </div>
-      
-      <div v-else class="text-center my-5 loading">
-        <p>LOADING...</p>
-      </div>
+
+      <Loading v-else/>
 
     </div>
   
@@ -26,12 +24,14 @@
 
 import axios from 'axios';
 import Album from "./Album.vue";
+import Loading from "./Loading.vue";
 
 export default {
   name: 'Main',
 
   components: {
-    Album
+    Album,
+    Loading
   },
 
   data(){
@@ -75,12 +75,6 @@ export default {
 main{
   background-color: $background-color;
   min-height: calc(100vh - 70px);
-
-  .loading{
-    font-size: 50px;
-    font-weight: 700;
-    color: white;
-  }
 }
 
 </style>
