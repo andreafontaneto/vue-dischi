@@ -1,18 +1,18 @@
 <template>
 
-  <div class="col text-center p-4 album-box ">
+  <div class="col text-center mx-3 p-4 album-box ">
 
     <div class="mx-auto album-img">
-      <img src="https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg" alt="img">
+      <img :src="album.poster" :alt="album.title">
     </div>
               
     <div class="py-3 album-title">
-      <p>TITOLO</p>
+      <p>{{album.title}}</p>
     </div>
               
     <div class="album-info">
-      <p class="ai-author">Autore</p>
-      <p class="ai-year">ANNO</p>
+      <p class="ai-author">{{album.author}}</p>
+      <p class="ai-year">{{album.year}}</p>
     </div>
 
   </div>
@@ -23,7 +23,11 @@
 
 <script>
 export default {
-  name: 'Album'
+  name: 'Album',
+
+  props:{
+    album: Object
+  }
 }
 </script>
 
@@ -32,8 +36,8 @@ export default {
 @import "../assets/style/vars.scss";
 
 .album-box{
-  background-color: lighten($main-color, 30%);
-  margin: 100px 20px 0 20px;
+  background-color: $box-color;
+  margin-bottom: 20px !important;
 
   .album-img{
     width: 150px;
@@ -41,19 +45,22 @@ export default {
   }
 
   .album-title{
-    font-size: 30px;
+    font-size: 25px;
     color: white;
+    text-transform: uppercase;
   }
 
   .album-info{
     color: grey;
         
     .ai-author{
-      font-size: 30px;
+      font-size: 20px;
+      margin-bottom: 0 !important;
     }
 
     .ai-year{
-      font-size: 20px;
+      font-size: 15px;
+      margin-bottom: 0 !important;
     }
   }
 }

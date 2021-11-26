@@ -20,7 +20,7 @@ export default {
 
 header{
   height: 70px;
-  background-color: lighten($main-color, 10%);
+  background-color: $box-color;
 
   .logo{
     width: 40px;
