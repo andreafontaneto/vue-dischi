@@ -3,9 +3,14 @@
   <main>
 
     <div class="container">
+      <div class="row">
+        <Album />
+        <Album />
+        <Album />
+        <Album />
+        <Album />
+      </div>
 
-      <Album />
-      
     </div>
   
   </main>
