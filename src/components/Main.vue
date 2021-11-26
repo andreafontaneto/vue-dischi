@@ -3,9 +3,9 @@
   <main>
 
     <div class="container">
-  
+
       <Album />
-  
+      
     </div>
   
   </main>
@@ -19,7 +19,7 @@ import Album from "./Album.vue";
 export default {
   name: 'Main',
 
-  component: {
+  components: {
     Album
   }
 }
