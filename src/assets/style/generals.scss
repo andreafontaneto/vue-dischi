@@ -1,0 +1,25 @@
+// GENERALS
+
+// installo i font tramite npm da FontSource
+// li importo sul mio scss partendo da node_modules con ~
+// li richiamo nel body
+@import "~@fontsource/roboto/index.css"; // normal
+@import "~@fontsource/roboto/700.css";  // bold
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Roboto', sans-serif;
+}
+
+img{
+  max-width: 100%;
+}
+
+a{
+  color: black;
+}
