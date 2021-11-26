@@ -3,11 +3,17 @@
   <main class="py-5">
 
     <div class="container">
-      <div class="row">
-        <Album 
+      <div v-if="loaded === true" class="row">
+
+        <Album
         v-for="(album, index) in albums" 
         :key="index"
         :album="album"/>
+      
+      </div>
+      
+      <div v-else class="text-center my-5 loading">
+        <p>LOADING...</p>
       </div>
 
     </div>
@@ -30,7 +36,8 @@ export default {
 
   data(){
     return{
-      albums: []
+      albums: [],
+      loaded: false
     }
   },
 
@@ -44,6 +51,8 @@ export default {
           //console.log(r.data.response);
           this.albums = r.data.response;
           console.log(this.albums)
+
+          this.loaded = true;
         })
         .catch( e => {
           console.log(e);
@@ -65,6 +74,13 @@ export default {
 
 main{
   background-color: $background-color;
+  min-height: calc(100vh - 70px);
+
+  .loading{
+    font-size: 50px;
+    font-weight: 700;
+    color: white;
+  }
 }
 
 </style>
