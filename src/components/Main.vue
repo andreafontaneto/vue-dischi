@@ -1,15 +1,6 @@
 <template>
   
-  <main @changeValue="getGenre" class="py-5">
-
-    <select v-model="selectValue" @change="$emit('changeValue', selectValue)"
-    class="form-select" aria-label="Default select example">
-      <option selected>Seleziona il genere musicale</option>
-      <option value="1">Rock</option>
-      <option value="2">Pop</option>
-      <option value="3">Jazz</option>
-      <option value="4">Metal</option>
-    </select>
+  <main class="py-5">
 
     <div class="container">
       <div v-if="loaded === true" class="row">
@@ -46,8 +37,7 @@ export default {
   data(){
     return{
       albums: [],
-      loaded: false,
-      selectValue: ''
+      loaded: false
     }
   },
 
@@ -67,11 +57,6 @@ export default {
         .catch( e => {
           console.log(e);
         })
-    },
-
-    getGenre(value){
-      // this.selectValue = value;
-      console.log(value);
     }
 
   },

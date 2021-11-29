@@ -1,7 +1,8 @@
 <template>
-  <div class="col-2">
-    <select class="form-select" aria-label="Default select example">
-      <option selected>Seleziona il genere musicale</option>
+  <div class="col-3">
+    <select v-model="selectValue" @change="$emit('changeValue', valueSelect)" 
+    class="form-select" aria-label="Default select example">
+      <option value="0" selected>Seleziona il genere musicale</option>
       <option value="1">Rock</option>
       <option value="2">Pop</option>
       <option value="3">Jazz</option>
@@ -16,6 +17,12 @@ export default {
 
   props:{
     album: Object
+  },
+
+  data(){
+    return{
+      selectValue: 0
+    }
   }
 }
 </script>

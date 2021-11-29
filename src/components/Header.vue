@@ -1,6 +1,6 @@
 <template>
   
-  <header class="px-4">
+  <header @changeValue="getGenre" class="px-4">
     
     <div class="py-3 logo">
       <img src="../assets/img/spotify-logo.png" alt="spotify-logo">
@@ -21,6 +21,20 @@ export default {
 
   components: {
     Select
+  },
+
+  data(){
+    return{
+      selectValue: ''
+    }
+  },
+
+  methods: {
+
+    getGenre(valueSelect){
+      console.log(valueSelect);
+    }
+
   }
 
 }
