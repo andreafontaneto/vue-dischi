@@ -38,6 +38,25 @@ export default {
     genreSelected: String
   },
 
+  computed: {
+
+    filteredAlbums(){
+      // se la stringa del genere è una stringa vuota restituisce tutti gli album
+      if(this.genreSelected === ''){
+        return this.albums
+      }
+      // ALTRIMENTI...
+      // salvo in una costante un nuovo array filtrato 
+      const albumFiltered = this.albums.filter( album => {
+        // farà un "push" SOLO se è vera la condizione del return
+        return album.genre === this.genreSelected;
+      })
+      // restituisce il nuovo array filtrato come risultato di filteredAlbums()
+      return albumFiltered;
+    }
+
+  },
+
   data(){
     return{
       albums: [],
