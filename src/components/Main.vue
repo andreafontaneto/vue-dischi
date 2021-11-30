@@ -34,6 +34,10 @@ export default {
     Loading
   },
 
+  props: {
+    genreSelected: String
+  },
+
   data(){
     return{
       albums: [],

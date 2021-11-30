@@ -1,8 +1,8 @@
 <template>
   <div>
 
-    <Header />
-    <Main />
+    <Header @changeGenre="getGenre" />
+    <Main :genreSelected="genreSelected"/>
 
   </div>
 </template>
@@ -17,6 +17,21 @@ export default {
   components: {
     Header,
     Main
+  },
+
+  data(){
+    return{
+      genreSelected: ''
+    }
+  },
+
+  methods: {
+
+    getGenre(genre){
+      this.genreSelected = genre;
+      console.log(this.genreSelected);
+    }
+
   }
 }
 </script>
